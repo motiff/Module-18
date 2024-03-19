@@ -86,9 +86,11 @@ footer{
   margin-top: 100px;
   margin-bottom: 100px;
 }
-
-
+/* desktop */
 @media only screen and (min-width : 1180px) {
+  #portraitHeader{
+    display: none;
+  }
   .name{
     font-size: 96px;
     position: absolute;
@@ -166,22 +168,26 @@ footer{
     margin-bottom: 50px;
   }
   #workImage{
+    height: fit-content;
     width: inherit;
+    object-fit: fill;
   }
   .project{
     flex-direction: row;
     width: calc((((100vw - 280px)/12) * 4) + 60px);
   }
 }
-@media only screen and (max-width : 1179px){
+
+/* tablet */
+@media only screen and (min-width:600px) and (max-width:1179px){
   .wrapper{
-    padding: 5px;
+    padding: 20px;
   }
   .header {
     position: relative;
     grid-column: 1 / -1;
     min-height: 100vh;
-    margin: -5px;
+    margin: -20px;
     top: 0;
     right: 0;
     bottom: 0;
@@ -189,24 +195,40 @@ footer{
     padding-top: 60px;
     background-color: #6e64ff;
   }
+  #portraitHeader{
+    width: 180px; 
+    height: 300px; 
+    object-fit: cover;
+    position: absolute;
+    top: 40px;
+    left: 20px;
+  }
   .name{
+    position: absolute;
     font-size: 96px;
     right: 0;
     bottom: 0;
-    margin: 0;
+    margin-right: 20px;
+    margin-bottom: 80px;
   }
   .occupation{
+    position: absolute;
     font-size: 64px;
     font-style: italic;
     right: 0;
     bottom: 0;
+    margin-right: 20px;
+    margin-bottom: 30px;
   } 
+  .content{
+    margin-top: 40px;
+  }
   .navigation{
     background-color: #6e64ff;
     font-weight: 500;
     width: 100vw;
     top: 0;
-    margin-left: -5px;
+    margin-left: -20px;
     padding: 5px;
     position: fixed;
     overflow: hidden;
@@ -225,12 +247,105 @@ footer{
   #portrait{
     display: none;
   }
+  h5{
+    font-size: 26px;
+    font-weight: normal;
+  }
+  h6{
+    font-size: 20px;
+    font-weight: 300;
+  }
+  .workContainer{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    gap: 20px;
+    align-items: baseline;
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+  .project{
+    flex-direction: row;
+    width: 50%;
+  }
   #workImage{
-    padding-top: 50px;
     width: 100%;
     height: fit-content;
     object-fit: fill;
   }
 
+}
+/* mobile */
+@media only screen and (max-width: 599px){
+  .wrapper{
+    padding: 5px;
+  }
+  .header {
+    position: relative;
+    grid-column: 1 / -1;
+    min-height: 100vh;
+    margin: -5px;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding-top: 60px;
+    background-color: #6e64ff;
+  }
+  #portraitHeader{
+    width: 180px;
+    height: 280px;
+    object-fit: cover;
+    margin: 20px;
+  }
+  .name{
+    font-size: 72px;
+    right: 0;
+    bottom: 0;
+    margin: 20px;
+  }
+  .occupation{
+    font-size: 48px;
+    font-style: italic;
+    right: 0;
+    bottom: 0;
+    margin: 20px;
+  } 
+  .content{
+    margin-top: 40px;
+  }
+  .navigation{
+    background-color: #6e64ff;
+    font-weight: 500;
+    font-size: px;
+    width: 100vw;
+    top: 0;
+    margin-left: -5px;
+    padding: 5px;
+    position: fixed;
+    overflow: hidden;
+  }
+  ul.navigationMenu{
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    list-style-type: none;
+    margin-left: -60px;
+  }
+  li.menuItem{
+    padding-top: auto;
+    font-size: 16px;
+  }
+  #portrait{
+    display: none;
+  }
+  .project{
+    padding-top: 50px;
+  }
+  #workImage{
+    width: 100%;
+    height: fit-content;
+    object-fit: fill;
+  }
 }
 
